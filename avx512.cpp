@@ -1,5 +1,8 @@
 
 #include <immintrin.h> // AVX
+
+#define AVX512 512
+#define AVX512_STR "AVX512"
 void add_AVX512(float *A, float *B, float *C, int size) {
     for (int i = 0; i < size; i += 16) {
         __m512 inVec1 = _mm512_loadu_ps(&A[i]);

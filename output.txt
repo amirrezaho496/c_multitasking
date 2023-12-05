@@ -49,3 +49,27 @@ double:
 Time taken by function: 142us
 3.23 3.23 3.23 3.23  .... 3.23 3.23 3.23 3.23 
 ________________________________________
+
+
+
+
+    cout << "size of arrayes : " << size << endl;
+
+    cout << "Timing for " << size << " float elements :" << endl;
+    cout << setw(20) << left << "Function" << setw(20) << right << "Time(us)" << endl;
+
+    cout << setw(20) << left << "Normal for loop" << setw(20) << right << duration_cast<microseconds>(duration<double>(high_resolution_clock::now()-high_resolution_clock::now())).count() << endl;
+
+    cout << setw(20) << left << "SSE 2" << setw(20) << right << duration_cast<microseconds>(duration<double>(high_resolution_clock::now()-high_resolution_clock::now())).count() << endl;
+
+    cout << setw(20) << left << "SSE 4.2" << setw(20) << right << duration_cast<microseconds>(duration<double>(high_resolution_clock::now()-high_resolution_clock::now())).count() << endl;
+
+    cout << setw(20) << left << "AVX2" << setw(20) << right << duration_cast<microseconds>(duration<double>(high_resolution_clock::now()-high_resolution_clock::now())).count() << endl;
+
+    cout << setw(20) << left << "AVX512" << setw(20) << right << duration_cast<microseconds>(duration<double>(high_resolution_clock::now()-high_resolution_clock::now())).count() << endl;
+
+    cout << "________________________________________" << endl<<endl;
+
+    return 0;
+}
+

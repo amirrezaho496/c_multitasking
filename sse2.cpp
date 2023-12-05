@@ -1,5 +1,8 @@
 #include <emmintrin.h> // SSE2
 
+#define SSE2 2
+#define SSE2_STR "SSE2"
+
 void add_SSE2(float *A, float *B, float *C, int size) {
     for (int i = 0; i < size; i += 4) {
         __m128 inVec1 = _mm_loadu_ps(&A[i]);

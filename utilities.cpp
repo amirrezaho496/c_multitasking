@@ -2,6 +2,9 @@
 #include <chrono>
 
 
+#define FOR_LOOP 0
+#define FOR_LOOP_STR "FOR LOOP"
+
 using namespace std;
 
 std::chrono::_V2::system_clock::time_point start;
@@ -11,16 +14,15 @@ void tick(){
     start = std::chrono::high_resolution_clock::now();
 }
 
-void tock(){
+
+int64_t tock(){
     // Get the end time
     auto end = std::chrono::high_resolution_clock::now();
 
     // Calculate the duration
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
-    std::cout << "Time taken by function: "
-              << duration.count() << "us" << std::endl;
-
+    return duration.count();
 }
 
 void print_array(float *C, int size){

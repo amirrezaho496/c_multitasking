@@ -1,5 +1,8 @@
 #include <immintrin.h> //AVX
 
+#define AVX2 102
+#define AVX2_STR "AVX2"
+
 void add_AVX2(float *A, float *B, float *C, int size) {
     for (int i = 0; i < size; i += 8) {
         __m256 inVec1 = _mm256_loadu_ps(&A[i]);

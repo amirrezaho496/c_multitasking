@@ -1,6 +1,9 @@
 
 #include <nmmintrin.h> // SSE4.2
 
+#define SSE4_2 42
+#define SSE4_2_STR "SSE4_2"
+
 void add_SSE4_2(float *A, float *B, float *C, int size) {
     for (int i = 0; i < size; i += 4) {
         __m128 inVec1 = _mm_loadu_ps(&A[i]);
