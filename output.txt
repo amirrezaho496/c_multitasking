@@ -1,0 +1,51 @@
+(base) amirreza@nitro5:~$ g++ -mavx2 -mavx512f main.cpp -o main  && ./main 
+size of arrayes : 196608
+Normal for loop :, A+B=C :
+float:
+Time taken by function: 1305us
+3.23 3.23 3.23 3.23  .... 3.23 3.23 3.23 3.23 
+
+double:
+Time taken by function: 1436us
+3.23 3.23 3.23 3.23  .... 3.23 3.23 3.23 3.23 
+________________________________________
+
+SSE 2 A+B=C :
+float:
+Time taken by function: 565us
+3.23 3.23 3.23 3.23  .... 3.23 3.23 3.23 3.23 
+
+double:
+Time taken by function: 1130us
+3.23 3.23 3.23 3.23  .... 3.23 3.23 3.23 3.23 
+________________________________________
+
+SSE 4.2 , A+B=C :
+float:
+Time taken by function: 410us
+3.23 3.23 3.23 3.23  .... 3.23 3.23 3.23 3.23 
+
+double:
+Time taken by function: 348us
+3.23 3.23 3.23 3.23  .... 3.23 3.23 3.23 3.23 
+________________________________________
+
+AVX2 , A+B=C :
+float:
+Time taken by function: 95us
+3.23 3.23 3.23 3.23  .... 3.23 3.23 3.23 3.23 
+
+double:
+Time taken by function: 190us
+3.23 3.23 3.23 3.23  .... 3.23 3.23 3.23 3.23 
+________________________________________
+
+AVX512 , A+B=C :
+float:
+Time taken by function: 86us
+3.23 3.23 3.23 3.23  .... 3.23 3.23 3.23 3.23 
+
+double:
+Time taken by function: 142us
+3.23 3.23 3.23 3.23  .... 3.23 3.23 3.23 3.23 
+________________________________________

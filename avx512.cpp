@@ -10,6 +10,15 @@ void add_AVX512(float *A, float *B, float *C, int size) {
 }
 
 
+void add_AVX512_d(double *A, double *B, double *C, int size) {
+    for (int i = 0; i < size; i += 8) {
+        __m512d inVec1 = _mm512_loadu_pd(&A[i]);
+        __m512d inVec2 = _mm512_loadu_pd(&B[i]);
+        __m512d outVec = _mm512_add_pd(inVec1, inVec2);
+        _mm512_storeu_pd(&C[i], outVec);
+    }
+}
+
 // int main() {
 //     float A[] = {1.0f, 2.0f, 3.0f, 4.0f};
 //     float B[] = {1.0f, 2.0f, 3.0f, 4.0f};

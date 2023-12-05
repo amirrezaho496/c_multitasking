@@ -9,6 +9,14 @@ void add_SSE4_2(float *A, float *B, float *C, int size) {
         _mm_storeu_ps(&C[i], outVec);
     }
 }
+void add_SSE4_2_d(double *A, double *B, double *C, int size) {
+    for (int i = 0; i < size; i += 2) {
+        __m128d inVec1 = _mm_loadu_pd(&A[i]);
+        __m128d inVec2 = _mm_loadu_pd(&B[i]);
+        __m128d outVec = _mm_add_pd(inVec1, inVec2);
+        _mm_storeu_pd(&C[i], outVec);
+    }
+}
 // int main() {
 //     float A[] = {1.0f, 2.0f, 3.0f, 4.0f};
 //     float B[] = {1.0f, 2.0f, 3.0f, 4.0f};
